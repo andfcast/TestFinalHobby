@@ -1,9 +1,9 @@
-export function renderizarUsuarios(usuarios, contenedor) {
+export function renderizarComentarios(comentarios, contenedor) {
   contenedor.innerHTML = '';
 
-  usuarios.forEach(usuario => {
+  comentarios.forEach(comentario => {
     const li = document.createElement('li');
-    li.textContent = usuario.name; 
+    li.textContent = comentario.texto; 
     contenedor.appendChild(li);
   });
 }

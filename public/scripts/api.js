@@ -1,7 +1,7 @@
 const comentarios = [];
 
-export async function obtenerUsuarios() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+export async function obtenerComentarios() {
+  const response = await fetch('https://testfinalhobby-back.onrender.com/comments');
 
   if (!response.ok) {
     throw new Error('Error al obtener los datos');

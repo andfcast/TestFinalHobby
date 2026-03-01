@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 const comments = [{
@@ -8,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Servir archivos estáticos (HTML, CSS, JS) desde una carpeta 'public'
 app.use(express.static('public'));
+app.use(cors());
 app.get('/comments',(req,res) =>{
     res.status(200).json(comments);
 });

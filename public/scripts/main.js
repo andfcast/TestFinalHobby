@@ -1,16 +1,20 @@
-import { obtenerEquipos, obtenerUsuarios } from './api.js';
-import { renderizarEquipos, renderizarUsuarios } from './dom.js';
+import { obtenerComentarios, obtenerEquipos } from './api.js';
+import { renderizarComentarios, renderizarEquipos } from './dom.js';
 
-const boton = document.getElementById('btn-cargar');
+const botonCarga = document.getElementById('btn-cargar');
 const carrusel = document.getElementById('carruselEquipos');
 const divCarousel = document.getElementById('intCarrusel');
+const listaComentarios = document.getElementById('lista-comentarios');
+const botonAgregar = document.getElementById('boton-agregar');
+const url = 'https://testfinalhobby-back.onrender.com/comments';
 
-window.addEventListener('load', function() {
-  console.log('La página y todos sus recursos han cargado por completo');
-  // Tu código aquí
+
+window.addEventListener('DOMContentLoaded', async() => {
+  const comentarios = await obtenerComentarios();
+  renderizarComentarios(comentarios, listaComentarios);
 });
 
-boton.addEventListener('click', async () => {
+botonCarga.addEventListener('click', async () => {
   try {
     const equipos = await obtenerEquipos();
     carrusel.style.display = "block";
@@ -19,3 +23,18 @@ boton.addEventListener('click', async () => {
     alert('No fue posible cargar los equipos');
   }
 });
+
+botonAgregar.addEventListener('click', async() =>{
+  let datos = {
+    Comments: document.getElementById('txtComentarios').innerText
+  }
+  fetch(url,{
+    method: 'POST', headers: {
+        'Content-Type': 'application/json'
+    }, body: JSON.stringify(datos)
+  })
+  .then(response => response.json())
+  .then(info => renderizarComentarios(info.data))
+  .catch(error => console.error('Error:', error));
+}
+);
