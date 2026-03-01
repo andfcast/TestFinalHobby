@@ -25,8 +25,10 @@ botonCarga.addEventListener('click', async () => {
 });
 
 botonAgregar.addEventListener('click', async() =>{
+  let comments = document.getElementById('txtComentario').value;
+  document.getElementById('txtComentario').value = '';
   let datos = {
-    Comments: document.getElementById('txtComentarios').innerText
+    Comments: comments
   }
   fetch(url,{
     method: 'POST', headers: {
@@ -34,7 +36,7 @@ botonAgregar.addEventListener('click', async() =>{
     }, body: JSON.stringify(datos)
   })
   .then(response => response.json())
-  .then(info => renderizarComentarios(info.data))
+  .then(info => window.location.reload())
   .catch(error => console.error('Error:', error));
 }
 );

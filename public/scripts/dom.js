@@ -1,6 +1,5 @@
 export function renderizarComentarios(comentarios, contenedor) {
   contenedor.innerHTML = '';
-
   comentarios.forEach(comentario => {
     const li = document.createElement('li');
     li.textContent = comentario.texto; 
