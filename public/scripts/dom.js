@@ -17,7 +17,6 @@ export function renderizarEquipos(equipos, contenedor) {
       divElement.classList.add('active');
     }
     const imgElement = document.createElement('img');
-    debugger;
     imgElement.src = 'img/' + equipo.img;
     imgElement.classList.add('d-block');
     imgElement.classList.add('w-100');
