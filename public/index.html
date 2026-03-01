@@ -2,27 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Ejemplo Proyecto</title>
+  <title>Información de Formula 1 2025</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <header>
-    <h1>Listado de usuarios</h1>
+    <h1>Fórmula 1</h1>
   </header>
 
   <main>
-    <section aria-labelledby="titulo-usuarios">
-      <h2 id="titulo-usuarios">Usuarios desde una API</h2>
-      <button id="btn-cargar">Cargar usuarios</button>
-      <ul id="lista-usuarios"></ul>
+    <section aria-labelledby="titulo-equipos">
+      <h2 id="titulo-equipos">Listado de equipos de la F1 2026</h2>
+      <button id="btn-cargar" class="btn btn-info">Cargar equipos</button>
+      <br />
+      <br />
+      <div id="carruselEquipos" class="carousel slide" style="display: none;">
+        <div class="carousel-inner" id="intCarrusel">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselEquipos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselEquipos" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+		  </div>
+    </section>
+    <section>
+      <h3 id="titulo-equipos">Deja tu comentario acá</h3>
+      <textarea id="txtComentario"></textarea>
+    </section>
+    <section>
+      <ul id="lista-comentarios"></ul>
     </section>
   </main>
-
   <footer>
-    <p>Ejemplo académico de desarrollo frontend</p>
+    <p>Hecho por: Andrés Felipe Castañeda Díaz</p>
+    <p>2026</p>
   </footer>
-
   <script type="module" src="scripts/main.js"></script>
 </body>
 </html>

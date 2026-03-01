@@ -6,9 +6,10 @@ body {
 }
 
 header, footer {
-  background-color: #f2f2f2;
+  background-color: #ff0000;
   padding: 16px;
   text-align: center;
+  color: white;
 }
 
 main {
@@ -45,6 +46,13 @@ li {
   align-items: center;
 }
 
+textarea {
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding and border are included in the 100% width */
+  height: 150px; /* Set a desired height */
+  padding: 10px; /* Optional: add internal padding for text */
+  border: 1px solid #000; /* Optional: add a border */
+}
 
 @media (max-width: 900px) {
   section {
